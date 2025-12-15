@@ -48,6 +48,30 @@ print(students[0]['Combo,Name'])
 print(students[0]['Email'][0])
 print(students[0]['Email'][1])
 
+print(students[0]['FName'])
+print(students[0]['LName'])
+print(students[0]['GL'])
+print("____________________")
+print("")
+
+# Get the second student's CPS ID, first email, and grade level:
+print(students[1]['CPSID'])
+print(students[1]['Email'][0])
+print(students[1]['GL'])
+print(students[1]['HR'])
+print("____________________")
+print("")
+
+# Get the last student's CPS ID, last email, grade level, 
+# and homeroom:
+print(students[35]['CPSID'])
+print(students[35]['Email'][1])
+print(students[-1]['GL'])
+print(students[-1]['HR'])
+print("____________________")
+print("")
+
+
 # What is being counted?
 
 # If the output is 36, what does that tell you?
@@ -68,10 +92,29 @@ print(students[0]['Email'][1])
 #and printing the name and email of the students
 #we are also printing a line of underscores to separate the students
 #we are also printing a line of underscores to separate the students
+
 for student in students:
     print(student['Combo,Name'])
     print(student['Email'][0])
     print(student['Email'][1])
+    # Get homeroom, grade level, and CPS ID.
+    print(student['HR'])
+    print(student['GL'])
+    print(student['CPSID'])
+
+    # Make an "off-campus" checker!
+    if student['GL'] >= 10:
+        print("This student can go off-campus")
+
+    # If the last name begins with an "R", give them a treat!
+    if student['LName'][0] == "R":
+        print("Last name is R! Awesome!!!!!")
+   
+    if student['LName'][0] == "L":
+        print("Yuh-oh.")
+        break
+
+    # This prints 25 lines in a row!
     print("_"*25)
 
 # What does the loop variable student represent on each pass?
@@ -88,11 +131,12 @@ for student in students:
 # we are asking the user to input their name
 # then we are checking if the name is in the data
 # if the name is in the data we are printing the name and "this works"
-name = input("what is you name?") 
+
+name = input("What is you name?") 
 for student in students:
-    if name == student['Combo,Name']:
-        print(student['Combo,Name'])
-        print("this works")
+   if name == student['Combo,Name']:
+       print(student['Combo,Name'])
+       print("this works")
 
 # What is the goal of this search?
 
